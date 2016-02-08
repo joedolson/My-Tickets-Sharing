@@ -28,6 +28,29 @@ $mts_version = '1.0.0';
 
 load_plugin_textdomain( 'my-tickets-sharing', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
 
+
+// The URL of the site with EDD installed
+define( 'EDD_MTS_STORE_URL', 'https://www.joedolson.com' ); 
+// The title of your product in EDD and should match the download title in EDD exactly
+define( 'EDD_MTS_ITEM_NAME', 'My Tickets: Sharing' ); 
+
+if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) {
+	// load our custom updater if it doesn't already exist 
+	include( dirname( __FILE__ ) . '/updates/EDD_SL_Plugin_Updater.php' );
+}
+
+// retrieve our license key from the DB
+$license_key = trim( get_option( 'mts_license_key' ) ); 
+// setup the updater
+$edd_updater = new EDD_SL_Plugin_Updater( EDD_MTS_STORE_URL, __FILE__, array(
+	'version' 	=> $mts_version				// current version number
+	'license' 	=> $license_key,			// license key (used get_option above to retrieve from DB)
+	'item_name'     => EDD_MTS_ITEM_NAME,	// name of this plugin
+	'author' 	=> 'Joe Dolson',			// author of this plugin
+	'url'           => home_url()
+) );
+
+
 /*
  * Get the post data that will be sent to social sharing pages.
  * 
@@ -269,26 +292,6 @@ function mts_update_settings( $post ) {
 	}
 
 	return false;
-}
-
-
-/* Common fields to all My Tickets add-ons */
-add_action( 'init', 'mts_check_for_upgrades' );
-/**
- * Check for automatic upgrade availability.
- */
-function mts_check_for_upgrades() {
-	global $mts_version;
-	$hash = get_option( 'mts_license_key' );
-	if ( ! $hash ) {
-		return;
-	}
-	$mt_plugin_current_version = $mts_version;
-	$mt_plugin_remote_path     = "http://www.joedolson.com/wp-content/plugins/files/updates-v2.php?key=$hash";
-	$mt_plugin_slug            = plugin_basename( __FILE__ );
-	if ( class_exists( 'mt_auto_update' ) ) {
-		new mt_auto_update( $mt_plugin_current_version, $mt_plugin_remote_path, $mt_plugin_slug );
-	}
 }
 
 /**
