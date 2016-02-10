@@ -7,7 +7,7 @@ Author: Joseph C Dolson
 Author URI: http://www.joedolson.com/product/my-tickets-sharing/
 Version: 1.0.0
 */
-/*  Copyright 2015  Joe Dolson (email : joe@joedolson.com)
+/*  Copyright 2015-2016  Joe Dolson (email : joe@joedolson.com)
 
     This program is open source software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -316,7 +316,7 @@ function mts_save_license( $response, $post ) {
 	$field = 'mts_license_key';
 	$name =  __( 'My Tickets: Sharing', 'my-tickets-sharing' );	
 	if ( $post[$field] != get_option( $field ) ) {
-		$verify = mt_verify_key( $field, $name );
+		$verify = mt_verify_key( $field, EDD_MTS_ITEM_NAME, EDD_MTS_STORE_URL )
 	} else {
 		$verify = '';
 	}
