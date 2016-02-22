@@ -5,7 +5,7 @@ Plugin URI: http://www.joedolson.com/
 Description: Invite purchasers to share your event on social media after they make their purchase.
 Author: Joseph C Dolson
 Author URI: http://www.joedolson.com/product/my-tickets-sharing/
-Version: 1.0.0
+Version: 1.0.1
 */
 /*  Copyright 2015-2016  Joe Dolson (email : joe@joedolson.com)
 
@@ -24,7 +24,7 @@ Version: 1.0.0
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 global $mts_version;
-$mts_version = '1.0.0';
+$mts_version = '1.0.1';
 
 load_plugin_textdomain( 'my-tickets-sharing', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
 

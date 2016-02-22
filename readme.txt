@@ -3,7 +3,7 @@ Contributors: joedolson
 Donate link: http://www.joedolson.com/my-tickets/add-ons/
 Tags: my-tickets, sharing
 Requires at least: 4.1
-Tested up to: 4.4.1
+Tested up to: 4.4.2
 Stable tag: trunk
 
 Invite purchasers to share your event on social media after they make their purchase.
@@ -23,6 +23,10 @@ New or updated translations are always appreciated. The translation files are in
 3. Add your license key in the My Tickets > Settings screen.
 
 == Changelog ==
+
+= 1.0.1 =
+
+* Update licensing & update methods to use Easy Digital Downloads
 
 = 1.0.0 =
 
