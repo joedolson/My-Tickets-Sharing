@@ -24,6 +24,10 @@ New or updated translations are always appreciated. The translation files are in
 
 == Changelog ==
 
+= 1.0.2 =
+
+* Bug fixes with license activation & updates
+
 = 1.0.1 =
 
 * Update licensing & update methods to use Easy Digital Downloads

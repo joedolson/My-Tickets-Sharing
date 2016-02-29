@@ -5,7 +5,7 @@ Plugin URI: http://www.joedolson.com/
 Description: Invite purchasers to share your event on social media after they make their purchase.
 Author: Joseph C Dolson
 Author URI: http://www.joedolson.com/product/my-tickets-sharing/
-Version: 1.0.1
+Version: 1.0.2
 */
 /*  Copyright 2015-2016  Joe Dolson (email : joe@joedolson.com)
 
@@ -24,7 +24,7 @@ Version: 1.0.1
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 global $mts_version;
-$mts_version = '1.0.1';
+$mts_version = '1.0.2';
 
 load_plugin_textdomain( 'my-tickets-sharing', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
 
@@ -39,17 +39,17 @@ if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) {
 	include( dirname( __FILE__ ) . '/updates/EDD_SL_Plugin_Updater.php' );
 }
 
+
 // retrieve our license key from the DB
 $license_key = trim( get_option( 'mts_license_key' ) ); 
 // setup the updater
 $edd_updater = new EDD_SL_Plugin_Updater( EDD_MTS_STORE_URL, __FILE__, array(
-	'version' 	=> $mts_version				// current version number
+	'version' 	=> $mts_version,				// current version number
 	'license' 	=> $license_key,			// license key (used get_option above to retrieve from DB)
 	'item_name'     => EDD_MTS_ITEM_NAME,	// name of this plugin
 	'author' 	=> 'Joe Dolson',			// author of this plugin
 	'url'           => home_url()
 ) );
-
 
 /*
  * Get the post data that will be sent to social sharing pages.
@@ -303,10 +303,11 @@ function mts_update_settings( $post ) {
 add_action( 'mt_license_fields', 'mts_license_field' );
 function mts_license_field( $fields ) {
 	$field = 'mts_license_key';
+	$active = ( get_option( 'mts_license_key_valid' ) == 'valid' ) ? ' <span class="license-activated">(active)</span>' : '';
 	$name =  __( 'My Tickets: Sharing', 'my-tickets-sharing' );
 	return $fields . "
 	<p class='license'>
-		<label for='$field'>$name</label><br/>
+		<label for='$field'>$name$active</label><br/>
 		<input type='text' name='$field' id='$field' size='60' value='".esc_attr( trim( get_option( $field ) ) )."' />
 	</p>";
 }
@@ -315,17 +316,14 @@ add_action( 'mt_save_license', 'mts_save_license', 10, 2 );
 function mts_save_license( $response, $post ) {
 	$field = 'mts_license_key';
 	$name =  __( 'My Tickets: Sharing', 'my-tickets-sharing' );	
-	if ( $post[$field] != get_option( $field ) ) {
-		$verify = mt_verify_key( $field, EDD_MTS_ITEM_NAME, EDD_MTS_STORE_URL )
-	} else {
-		$verify = '';
-	}
+	$verify = mt_verify_key( $field, EDD_MTS_ITEM_NAME, EDD_MTS_STORE_URL );
 	$verify = "<li>$verify</li>";
+	
 	return $response . $verify;
 }
 
 // these are existence checkers. Exist if licensed.
-if ( get_option( 'mts_license_key_valid' ) == 'true' ) {
+if ( get_option( 'mts_license_key_valid' ) == 'true' || get_option( 'mts_license_key_valid' ) == 'valid'  ) {
 	function mts_valid() {
 		return true;
 	}
