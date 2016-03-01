@@ -1,0 +1,114 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: My Tickets: Sharing\n"
+"POT-Creation-Date: 2016-03-01 12:54-0600\n"
+"PO-Revision-Date: 2016-03-01 12:54-0600\n"
+"Last-Translator: Joseph Dolson <joe@joedolson.com>\n"
+"Language-Team: Joseph Dolson <joe@joedolson.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: my-tickets-sharing.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: my-tickets-sharing.php:123
+msgid "Share this post"
+msgstr ""
+
+#: my-tickets-sharing.php:145
+#, php-format
+msgid "Share this! %s"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: my-tickets-sharing.php:199 my-tickets-sharing.php:307
+#: my-tickets-sharing.php:318
+msgid "My Tickets: Sharing"
+msgstr ""
+
+#: my-tickets-sharing.php:199
+msgid "Sharing"
+msgstr ""
+
+#: my-tickets-sharing.php:214
+msgid "Invalid request"
+msgstr ""
+
+#: my-tickets-sharing.php:222
+msgid "Social Sharing Services Updated"
+msgstr ""
+
+#: my-tickets-sharing.php:238
+msgid "Social Sharing Services"
+msgstr ""
+
+#: my-tickets-sharing.php:244
+msgid "Save Settings"
+msgstr ""
+
+#: my-tickets-sharing.php:256
+msgid "Social Sharing Options"
+msgstr ""
+
+#: my-tickets-sharing.php:263
+msgid "Social Sharing Settings"
+msgstr ""
+
+#: my-tickets-sharing.php:291
+msgid "Social Sharing Settings saved"
+msgstr ""
+
+#: my-tickets-sharing.php:331
+#, php-format
+msgid ""
+"Please <a href='%s'>enter your My Tickets: Sharing license key</a> to be "
+"eligible for support."
+msgstr ""
+
+#: updates/EDD_SL_Plugin_Updater.php:186
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr ""
+
+#: updates/EDD_SL_Plugin_Updater.php:194
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s "
+"or %5$supdate now%6$s."
+msgstr ""
+
+#: updates/EDD_SL_Plugin_Updater.php:337
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: updates/EDD_SL_Plugin_Updater.php:337
+msgid "Error"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.joedolson.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Invite purchasers to share your event on social media after they make their "
+"purchase."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Joseph C Dolson"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.joedolson.com/product/my-tickets-sharing/"
+msgstr ""
